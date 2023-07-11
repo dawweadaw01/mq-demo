@@ -1,0 +1,20 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+spring:
+  rabbitmq:
+    host: 43.136.131.133 # rabbitMQ的ip地址
+    port: 5672 # 端口
+    username: test
+    password: lhj020826..
+    virtual-host: /banyan
+    listener:
+      simple:
+        prefetch: 1
+        acknowledge-mode: auto
+        retry:
+          enabled: true
+          initial-interval: 1000ms
+          max-attempts: 3
+          max-interval: 10000ms
+          multiplier: 1
